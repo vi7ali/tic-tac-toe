@@ -7,7 +7,7 @@ body {
     font-size: 14px;
 
     background-color: #fff;
-    color: #d8e3ee;
+    color: rgb(224, 224, 226);
 }
 
 *,
@@ -33,34 +33,81 @@ p {
     margin: 0 auto;
 }
 
+/* ######## Logo ######## */
+
+.logo {
+    width: 100%;
+    height: 100%;
+}
+
 /* ######## Header ######## */
 .header {    
     width: 100%;
     height: 130px;
     padding-top: 15px;        
 
-    background-color: #190324;
+    background-color: #181818;
 }
 
 .header__inner {
     height: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;    
+    align-items: center;
 }
 
 .header__logo {
     width: 100px;
-    height: 100px;    
+    height: 100px;
 }
 
 .header__title {
     font-size: 2em;
+    text-transform: uppercase;
 }
 
-/* ######## Logo ######## */
+/* ######## Grid ######## */
+.grid {    
+    padding: 2rem 0;
+    background-color: #202020;
+}
 
-.logo {
-    width: 100%;
-    height: 100%;
+.grid__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+
+    max-width: 500px;    
+    margin: auto;        
+}
+
+.grid__cell {
+    width: 33.33333%;
+    padding: 5% 0;
+
+    font-size: 4em;
+    text-align: center;
+    
+    border: 3px solid rgb(80, 32, 108);
+    transition: border 0.2s linear;    
+}
+
+.grid__cell:hover {
+    border-color: rgb(147, 60, 197);    
+}
+
+.grid__cell--top {
+    border-top-style: hidden;
+}
+
+.grid__cell--bottom {
+    border-bottom-style: hidden;
+}
+
+.grid__cell--left {
+    border-left-style: hidden;
+}
+
+.grid__cell--right {
+    border-right-style: hidden;
 }

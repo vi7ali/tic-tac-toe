@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet"> 
     <title>Tic-Tac-Toe</title>
 </head>
 <body>
@@ -41,6 +41,24 @@
     </symbol>
 </svg>
 
+<!-- Intro Screen -->
+<div class="intro-screen" id="intro-screen">
+    <div class="intro-screen__container">
+        <div class="intro-screen__title">tic-tac-toe</div>
+        <div class="intro-screen__inner">    
+            <div class="intro-screen__player">
+                <div class="intro-screen__label">Player 'X'</div>
+                <input type="text" class="intro-screen__input" id="player1-name" placeholder="Player 1">
+            </div>
+            <div class="intro-screen__player">
+                <div class="intro-screen__label">Player 'O'</div>
+                <input type="text" class="intro-screen__input" id="player2-name" placeholder="Player 1">
+            </div>
+            <div class="intro-screen__button" id="play-btn">Play</div>
+        </div>
+    </div>
+</div>
+
 <!-- Header -->
 <header class="header">
     <div class="container">
@@ -62,22 +80,46 @@
     </div> <!-- /.container -->
 </header>
 
+<!-- Status Display-->
+<section class="status">
+    <div class="container">
+        <div class="status__inner">
+            <div class="status__item">
+                <div class="status__display" id="display">Welcome!</div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Grid -->
 <main class="grid">
     <div class="container">
         <div class="grid__inner">
-            <div class="grid__cell grid__cell--top grid__cell--left" id="top-left">X</div>
-            <div class="grid__cell grid__cell--top" id="top-center">X</div>
-            <div class="grid__cell grid__cell--top grid__cell--right" id="top-right">O</div>
-            <div class="grid__cell grid__cell--left" id="middle-left">O</div>
-            <div class="grid__cell" id="middle-center">X</div>
-            <div class="grid__cell grid__cell--right" id="middle-right">O</div>
-            <div class="grid__cell grid__cell--left grid__cell--bottom" id="bottom-left">X</div>
-            <div class="grid__cell grid__cell--bottom" id="bottom-center">O</div>
-            <div class="grid__cell grid__cell--right grid__cell--bottom" id="bottom-right">X</div>
+            <div class="grid__cell grid__cell--hidden grid__cell--top grid__cell--left" id="top-left"></div>
+            <div class="grid__cell grid__cell--hidden grid__cell--top" id="top-center" id="top-right"></div>
+            <div class="grid__cell grid__cell--hidden grid__cell--top grid__cell--right" id="middle-left"></div>
+            <div class="grid__cell grid__cell--hidden grid__cell--left" id="middle-center"></div>
+            <div class="grid__cell grid__cell--hidden" id="middle-right"></div>
+            <div class="grid__cell grid__cell--hidden grid__cell--right" id="bottom-left"></div>
+            <div class="grid__cell grid__cell--hidden grid__cell--left grid__cell--bottom"></div>
+            <div class="grid__cell grid__cell--hidden grid__cell--bottom" id="bottom-center"></div>
+            <div class="grid__cell grid__cell--hidden grid__cell--right grid__cell--bottom" id="bottom-right"></div>
         </div> <!-- /.grid__inner -->
     </div> <!-- /.container -->
 </main>
+
+<!-- Status Button -->
+<section class="status">
+    <div class="container">
+        <div class="status__inner">
+            <div class="status__item">
+                <div class="status__restart" id="restart">Restart</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
 
 <script src="js/script.js"></script>
 </body>

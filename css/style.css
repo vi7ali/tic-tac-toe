@@ -2,11 +2,12 @@
 
 body {
     margin: 0;
+    padding: 0;
 
-    font-family: 'Courgette', cursive;
+    font-family: 'Roboto Mono', monospace;
     font-size: 14px;
 
-    background-color: #fff;
+    background-color: #000000;
     color: rgb(224, 224, 226);
 }
 
@@ -24,8 +25,95 @@ p {
     margin: 0 0 10px;
 }
 
-/* ######## Container ######## */
+/* ######## Intro Screen ######## */
+.intro-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
 
+    background-color: black;
+
+    transition: 0.25s linear;
+}
+
+.intro-screen--hide {
+    display: none;
+}
+
+.intro-screen__container {
+    width: 200px;
+
+    position: relative;
+    top: 50%;    
+    margin: 0 auto;
+    margin-top: -180px;
+
+    text-align: center;
+}
+
+.intro-screen__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+
+    border: 3px solid rgb(182, 75, 243);
+    border-radius: 15px;    
+}
+
+.intro-screen__title {
+    margin: 10px 0;
+    font-size: 2em;
+    text-transform: uppercase;    
+}
+
+.intro-screen__player {
+    margin-bottom: 15px;
+}
+
+.intro-screen__label {
+    
+    margin-top: 15px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    color: rgb(182, 75, 243);
+}
+
+.intro-screen__input {
+    max-width: 170px;
+    padding: 5px 10px;
+    background-color: #181818;
+    color: rgb(224, 224, 226);
+    border-color: rgb(80, 32, 108);
+    border-radius: 5px;
+}
+
+.intro-screen__button {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 15px 15px;
+
+    text-transform: uppercase;
+
+    border: 2px solid rgb(182, 75, 243);
+    border-radius: 100px;
+
+    background-color: #202020;
+    cursor: default;
+
+    transition: 0.3s linear;
+}
+
+.intro-screen__button:hover {
+    background-color: #181818;
+    border-color: rgb(75, 243, 235);
+    color: rgb(75, 243, 235);
+}
+
+/* ######## Container ######## */
 .container {
     width: 100%;
     max-width: 1200px;
@@ -44,9 +132,7 @@ p {
 .header {    
     width: 100%;
     height: 130px;
-    padding-top: 15px;        
-
-    background-color: #181818;
+    padding-top: 15px;            
 }
 
 .header__inner {
@@ -67,9 +153,9 @@ p {
 }
 
 /* ######## Grid ######## */
-.grid {    
-    padding: 2rem 0;
-    background-color: #202020;
+.grid {
+    margin: 30px 0;
+    background-color: black;
 }
 
 .grid__inner {
@@ -78,22 +164,24 @@ p {
     justify-content: space-between;    
 
     max-width: 500px;    
-    margin: auto;        
+    margin: auto;
 }
 
 .grid__cell {
-    width: 33.33333%;
-    padding: 5% 0;
+    width: 33.33333%;    
+    /*padding: 5% 0;*/
 
-    font-size: 4em;
+    font-size: 7em;
     text-align: center;
     
     border: 3px solid rgb(80, 32, 108);
-    transition: border 0.2s linear;    
+    transition: border 0.2s linear;
+
+    cursor: default;    
 }
 
 .grid__cell:hover {
-    border-color: rgb(147, 60, 197);    
+    border-color: rgb(75, 243, 235);;    
 }
 
 .grid__cell--top {
@@ -111,3 +199,64 @@ p {
 .grid__cell--right {
     border-right-style: hidden;
 }
+
+.grid__cell--hidden {
+    color: transparent;
+}
+
+.grid__content {
+    color: rgb(119, 181, 253);
+}
+
+
+
+/* ######## Status ######## */
+.status {
+    padding: 2rem 0;    
+}
+
+.status__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    max-width: 500px;
+    margin: auto;
+}
+
+.status__item {
+    width: 100%;
+    margin: 10px auto;    
+    text-align: center;    
+}
+
+.status__display {    
+    background-color: rgb(80, 32, 108);
+
+    border: 2px dotted rgb(147, 60, 197);
+    border-radius: 10px;
+
+    line-height: 3em;
+}
+
+.status__restart {    
+    margin: 0 auto;
+    background-color: rgb(147, 60, 197);
+    max-width: 150px;    
+
+    line-height: 2em;
+
+    border: 2px solid rgb(80, 32, 108);
+    border-radius: 10px;
+
+    transition: 0.2s linear;
+}
+
+.status__restart:hover {
+    cursor: default;
+    background-color: #181818;
+    border-color: rgb(75, 243, 235);
+    color: rgb(75, 243, 235);
+}
+
+/* ######## Footer ######## */

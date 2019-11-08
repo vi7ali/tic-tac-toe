@@ -1,53 +1,59 @@
 'use strict'
 
-function changeContent(e) {
+const changeContent = e => {
     let target = e.target;
-    target.textContent = 'Y';
-    target.classList.remove('grid__cell--hidden');    
+    target.textContent = 'Y';    
 }
 
-function restartGame() {
-    fadeIn();    
-    const gridCells = document.getElementsByClassName('grid__cell');
-    for(let gridCell of gridCells) {
-        gridCell.textContent = 'Q';
-        gridCell.classList.add('grid__cell--hidden');        
-    }
-}
-
-function fadeOut() {
-    let playBtn = document.getElementById('play-btn');    
-    let introScreen = document.getElementById('intro-screen');
-    playBtn.style.display = 'none';
-    introScreen.classList.toggle('intro-screen--hidden');
-    setTimeout(function(){
-        introScreen.style.display = 'none';
-    }, 1000);
-}
-
-function fadeIn() {
-    let introScreen = document.getElementById('intro-screen');
-    let playBtn = document.getElementById('play-btn');  
-    playBtn.style.display = 'block';  
-    introScreen.style.display = 'block';     
-    setTimeout(function(){
-        introScreen.classList.toggle('intro-screen--hidden');
-    }, 200);
-}
-
-function render() {
-    const restartBtn = document.getElementById('restart');
+const gameUI = (() => {
+    // Private        
     const playBtn = document.getElementById('play-btn');    
     const gridCells = document.getElementsByClassName('grid__cell');
-
-    restartBtn.addEventListener('click', restartGame, false);
-    playBtn.addEventListener('click', fadeOut, false);
-
-    for(let gridCell of gridCells) {
-        gridCell.textContent = 'Q';
-        gridCell.addEventListener('click', changeContent, false);
+    const introScreen = document.getElementById('intro-screen');
+    const inputNames = document.getElementsByClassName('intro-screen__input');
+    
+    const fadeIn = () => {
+        playBtn.style.display = 'block';  
+        introScreen.style.display = 'block';     
+        setTimeout(function(){
+            introScreen.classList.toggle('intro-screen--hidden');
+        }, 200);
     }
-}
+
+    const fadeOut = () => {
+        playBtn.style.display = 'none';
+        introScreen.classList.toggle('intro-screen--hidden');
+        setTimeout(function(){
+            introScreen.style.display = 'none';
+        }, 1000);
+    }
+    //Public
+    const redrawUI = (opt) => {
+        for(let gridCell of gridCells) 
+            gridCell.textContent = '';
+
+        for(let input of inputNames)
+            input.value = '';
+        console.log(opt.newGame);
+        opt.newGame ? fadeOut() : fadeIn();
+    }
+
+    return { redrawUI }
+})();
+
+const gameFlow = (() => {
+    const restartBtn = document.getElementById('restart');
+    const playBtn = document.getElementById('play-btn');    
+    // const gridCells = document.getElementsByClassName('grid__cell');
+
+    restartBtn.addEventListener('click', gameUI.redrawUI.bind(this, {newGame: false}), false);
+    playBtn.addEventListener('click', gameUI.redrawUI.bind(this, {newGame: true}), false);           
+    // gridCell.addEventListener('click', changeContent, false);
+    
+    // const init = () => gameUI.redrawUI({newGame: true});
+    
+    // return {init}
+})();
 
 
-render();
+// gameFlow.init();

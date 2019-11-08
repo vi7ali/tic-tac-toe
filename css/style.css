@@ -140,20 +140,20 @@ p {
     background-color: black;
 }
 
-.grid__inner {
+.grid__inner {    
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: space-between;     */
-
-    max-width: 390px;    
-    margin: auto;
+    max-width: 390px;
+    
+    margin: auto;       
+    
+    font-size: 6em;
 }
 
 .grid__cell {
-    width: 33.33333%;     
-    /*padding: 5% 0;*/
-
-    font-size: 7em;
+    width: 33.33333%;
+    min-height: 130px;    
+    
     text-align: center;
     
     border: 3px solid rgb(80, 32, 108);

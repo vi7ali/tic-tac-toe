@@ -147,12 +147,12 @@ p {
     
     margin: auto;       
     
-    font-size: 6em;
+    font-size: 6rem;
 }
 
 .grid__cell {
     width: 33.33333%;
-    min-height: 130px;    
+    min-height: 135px;    
     
     text-align: center;
     
@@ -163,7 +163,7 @@ p {
 }
 
 .grid__cell:hover {
-    border-color: rgb(75, 243, 235);;    
+    border-color: rgb(75, 243, 235);    
 }
 
 .grid__cell--top_left {
@@ -189,8 +189,6 @@ p {
 .grid__content {
     color: rgb(119, 181, 253);
 }
-
-
 
 /* ######## Status ######## */
 .status {

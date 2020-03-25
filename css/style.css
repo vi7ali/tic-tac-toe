@@ -143,8 +143,8 @@ p {
 .grid__inner {    
     display: flex;
     flex-wrap: wrap;
-    max-width: 390px;
-    
+    width: 390px;
+
     margin: auto;       
     
     font-size: 6rem;
@@ -154,10 +154,10 @@ p {
     width: 33.33333%;
     min-height: 135px;    
     
-    text-align: center;
+    text-align: center;    
     
     border: 3px solid rgb(80, 32, 108);
-    transition: border 0.2s linear;
+    transition: all 0.2s linear;
 
     cursor: default;    
 }
@@ -186,8 +186,13 @@ p {
     color: transparent;
 }
 
-.grid__content {
-    color: rgb(119, 181, 253);
+.grid__cell--highlight {
+    transition: all 1s linear;
+
+    color: rgb(0, 247, 255);
+    font-size: 100%;
+
+    border-color: rgb(0, 247, 255);
 }
 
 /* ######## Status ######## */

@@ -4,11 +4,8 @@ const PlayerFactory = (name, mark) => {
   if (!name)
     name = mark === 'X' ? 'Player 1' : 'Player 2';
 
-  const sayHello = () => console.log(`Hi, my name is ${name}, mark - ${mark}`);
-
   return {
-    name,
-    sayHello,
+    name,    
     mark
   }
 }
@@ -87,8 +84,7 @@ const GameLogic = (() => {
 
   const makeMove = e => {
     if (!e.target.innerText) {
-      e.target.innerText = currentPlayer.mark;
-      currentPlayer.sayHello();
+      e.target.innerText = currentPlayer.mark;      
       currentPlayer = currentPlayer === player1 ? player2 : player1;
       checkWin();
     }
